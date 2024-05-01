@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .4s ease;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url(./images/eco7rev.avif);
+  background-size: cover;
+  padding: 1% 7%;
+  background-repeat: no-repeat;
+}
