@@ -35,10 +35,18 @@ function Navbar({ optionSetter }) {
           {servicesVisible ? (
             <div className="flex flex-col gap-1">
               <p className="text-white text-lg hover:text-black">Locations</p>
-              <p className="text-white text-lg hover:text-black">Recycling Options</p>
-              <p className="text-white text-lg hover:text-black">Collection schedule</p>
-              <p className="text-white text-lg hover:text-black">Timely update</p>
-              <p className="text-white text-lg hover:text-black">Complaint Registration</p>
+              <p className="text-white text-lg hover:text-black">
+                Recycling Options
+              </p>
+              <p className="text-white text-lg hover:text-black">
+                Collection schedule
+              </p>
+              <p className="text-white text-lg hover:text-black">
+                Timely update
+              </p>
+              <p className="text-white text-lg hover:text-black">
+                Complaint Registration
+              </p>
             </div>
           ) : (
             ""
@@ -70,31 +78,42 @@ function Navbar({ optionSetter }) {
           <div className="flex flex-col gap-1">
             <p
               onClick={() => optionSetter("home")}
-              className=" px-2 py-1 bg-white w-[15vh] text-2xl rounded-md  hover:text-black "
+              className=" px-2 py-1 bg-white w-[45vw] text-2xl rounded-md  hover:text-black "
             >
               Home
             </p>
             <p
               onClick={() => optionSetter("about")}
-              className=" px-2 py-1 bg-white w-[15vh] text-2xl rounded-md hover:text-black "
+              className=" px-2 py-1 bg-white w-[45vw] text-2xl rounded-md hover:text-black "
             >
               About
             </p>
             <p
-              onClick={() => optionSetter("services")}
-              className=" px-2 py-1 bg-white w-[15vh] text-2xl rounded-md hover:text-black "
+              onClick={() => setServicesVisible((prev) => !prev)}
+              className=" px-2 py-1 bg-white w-[45vw] text-2xl rounded-md hover:text-black "
             >
-              Services
+              Services &#x25BE;
+              {servicesVisible ? (
+                <div className="flex flex-col gap-2">
+                  <p className=" text-lg text-black ">Locations</p>
+                  <p className=" text-lg text-black">Recycling Options</p>
+                  <p className=" text-lg text-black">Collection schedule</p>
+                  <p className=" text-lg text-black">Timely update</p>
+                  <p className=" text-lg text-black">Complaint Registration</p>
+                </div>
+              ) : (
+                ""
+              )}
             </p>
             <p
               onClick={() => optionSetter("gallery")}
-              className=" px-2 py-1 bg-white w-[15vh] text-2xl rounded-md hover:text-black "
+              className=" px-2 py-1 bg-white w-[45vw] text-2xl rounded-md hover:text-black "
             >
               Gallery
             </p>
             <p
               onClick={() => optionSetter("contact")}
-              className=" px-2 py-1 bg-white w-[15vh] text-2xl rounded-md hover:text-black "
+              className=" px-2 py-1 bg-white w-[45vw] text-2xl rounded-md hover:text-black "
             >
               Contact
             </p>
