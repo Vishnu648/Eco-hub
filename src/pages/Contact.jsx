@@ -21,7 +21,7 @@ function Contact() {
   return (
     <div className="flex flex-col">
       <h2 className="text-4xl font-semibold">Contacts</h2>
-      <section className=" flex flex-col items-center gap-6 py-3 mt-32 md:mt-0">
+      <section className=" flex flex-col items-center gap-6 py-3 mt-24 md:mt-0">
         {contacts.map((details, i) => {
           return (
             <div key={i} className=" flex flex-col gap-1 items-center text-lg ">

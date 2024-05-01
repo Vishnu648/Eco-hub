@@ -4,6 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
+import Footer from '../components/Footer'
 
 function Pages() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -13,7 +14,7 @@ function Pages() {
   };
 
   return (
-    <div>
+    <div className="relative">
       <Navbar optionSetter={optionSetter} />
       {selectedPage == "home" ? (
         <Home />
@@ -26,6 +27,7 @@ function Pages() {
       ) : (
         <h2>Page not found...</h2>
       )}
+      <Footer/>
     </div>
   );
 }
