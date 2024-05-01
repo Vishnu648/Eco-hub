@@ -32,13 +32,13 @@ function Gallery() {
   ]);
   return (
     <div >
-      <div className="flex flex-wrap justify-around gap-2 lg:h-[78vh] py-6  overflow-auto">
+      <div className="flex flex-wrap justify-around gap-2 h-[75vh] lg:h-[78vh] py-6  overflow-auto">
         {images.map((img) => {
           return (
             <div className="h-72 w-80 rounded-md hover:scale-[1.1]">
               <img
                 src={img.url}
-                alt={img}
+                alt='img'
                 className="h-full rounded-md w-full object-fill"
               />
             </div>

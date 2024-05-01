@@ -3,7 +3,9 @@ import React from "react";
 function About() {
   return (
     <div className="flex flex-col items-center">
-      <p className="text-xl font-semibold w-[90vh] lg:w-[80%] my-16">
+      <p 
+      className="text-2xl lg:text-xl font-semibold w-[85vw] lg:w-[80%] my-16 h-[70vh] md:h-[60vh] overflow-auto"
+      >
         A comprehensive guide to help users understand how to properly sort
         different types of waste, including recyclables, organic waste, and
         hazardous materials. An interactive map that displays the locations of
