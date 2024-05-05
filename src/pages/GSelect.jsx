@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { useHistory } from "react-router-dom"; // assuming you're using react-router-dom for routing
 
 const UpdateAvailability = () => {
-//   const history = useHistory();
+  //   const history = useHistory();
 
   const [gData, setGData] = useState({ g_name: "", location: "" });
   const [date, setDate] = useState("");
@@ -56,33 +56,48 @@ const UpdateAvailability = () => {
   };
 
   return (
-    <div
-    >
-      <a href="glogout.php">LOGOUT</a>
+    <div>
+      <div className="">
+        <a className="flex justify-end" href="/glogin">
+          LOGOUT
+        </a>
+      </div>
       <br />
       <br />
-      <p>Hello {gData.g_name}</p>
-      <h1>Update available date and time</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="date">Pick the date you're available:</label>
-        <input
-          type="date"
-          name="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+      <p className="text-3xl">Hello {gData.g_name}</p>
+      <h1 className="my-4">Update available date and time</h1>
+      <form className="" onSubmit={handleSubmit}>
+        <div className=" flex flex-col gap-2">
+
+        <label htmlFor="date" className="flex gap-2">
+          Pick the date you're available :
+          <input
+            type="date"
+            name="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </label>
         <br />
-        <label htmlFor="time">Select a time:</label>
-        <input
-          id="time"
-          type="time"
-          name="time"
-          step="2"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-        />
+        <label htmlFor="time" className="flex gap-2">
+          Select a time :
+          <input
+            id="time"
+            type="time"
+            name="time"
+            step="2"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            />
+        </label>
         <br />
-        <input id="button" type="submit" value="SUBMIT" />
+            </div>
+        <input
+          className="px-3 py-1 rounded-full mt-12 bg-blue-400 hover:bg-blue-500 text-white cursor-pointer  "
+          id="button"
+          type="submit"
+          value="SUBMIT"
+        />
         <br />
       </form>
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}

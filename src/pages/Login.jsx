@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom"; // Assuming you're using react-router-dom for routing
-import {Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-//   const history = useHistory();
+  const navigate = useNavigate();
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!userName || !password || !isNaN(userName)) {
       setErrorMessage("Please enter a valid username and password");
       return;
@@ -29,20 +29,24 @@ const Login = () => {
 
       if (response.ok) {
         // Redirect to select page after successful login
-        // history.push("/select");
+        navigate("/select");
       } else {
         setErrorMessage("Wrong username or password!");
       }
-    } catch (error) {
+    }
+     catch (error) {
       console.error("Error:", error);
       setErrorMessage("An error occurred. Please try again later.");
     }
   };
 
   return (
-    <div
-     
-    >
+    <div>
+      <Link to="/">
+        <button className="bg-white text-black px-4 py-1 rounded-full hover:cursor-pointer">
+          back
+        </button>
+      </Link>
       <div
         style={{
           width: "450px",
@@ -108,11 +112,13 @@ const Login = () => {
             style={{
               padding: "10px",
               width: "100px",
-              color: "white",
+              // color: "white",
               backgroundColor: "lightblue",
               border: "none",
+              cursor: "pointer",
             }}
             type="submit"
+            onClick={handleSubmit}
             value="Login"
           />
           <br />
@@ -121,7 +127,11 @@ const Login = () => {
             <b>Don't have an account</b>
           </p>
           {/* <a href="signup.php">Click to Signup</a> */}
-          <Link to='/signup'>Click to signup</Link>
+          <Link to="/signup">
+            <p className="text-md text-blue-800 hover:underline">
+              Click to signup
+            </p>
+          </Link>
           <br />
           <br />
         </form>

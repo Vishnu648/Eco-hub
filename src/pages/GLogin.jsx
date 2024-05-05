@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {Link} from 'react-router-dom'
-// import { useHistory } from 'react-router-dom'; // assuming you're using react-router-dom for routing
+import { useNavigate } from 'react-router-dom'; // assuming you're using react-router-dom for routing
 
 const Login = () => {
-  //   const history = useHistory();
+    const navigate = useNavigate();
 
   const [gName, setGName] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +33,7 @@ const Login = () => {
         // Assuming your backend sends a success response like { success: true }
         if (data.success) {
           // Redirect to gselect page after successful login
-          //   history.push('/gselect');
+            navigate('/gselect');
         } else {
           setErrorMessage("Wrong username or password!");
         }
@@ -119,6 +119,7 @@ const Login = () => {
               width: "100px",
               backgroundColor: "lightblue",
               border: "none",
+              cursor:'pointer'
             }}
             type="submit"
             value="Login"

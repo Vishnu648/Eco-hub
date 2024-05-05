@@ -7,9 +7,10 @@ import Contact from "./pages/Contact";
 import Pages from "./pages/Pages";
 
 import GLogin from "./pages/GLogin";
-import GSelect from './pages/GSelect'
-import Login from './pages/Login'
-import SignUp from './pages/SignUp'
+import GSelect from "./pages/GSelect";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Select from "./pages/Select";
 
 function App() {
   return (
@@ -19,12 +20,13 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gselect" element={<GSelect />} />
+
 
         <Route path="/glogin" element={<GLogin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-
-
+        <Route path="/select" element={<Select />} />
       </Routes>
     </BrowserRouter>
   );

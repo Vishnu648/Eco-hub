@@ -203,9 +203,8 @@ const Signup = () => {
           />
           <br />
           <br />
-          {/* <a href="login.php"><b>Click to Login</b></a> */}
-          <Link to="/glogin">
-            <b>Click to Login</b>
+          <Link to="/login">
+            back to Login
           </Link>
           <br />
           <br />
