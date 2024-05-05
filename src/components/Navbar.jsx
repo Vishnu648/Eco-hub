@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 function Navbar({ optionSetter }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,9 +9,11 @@ function Navbar({ optionSetter }) {
     <div className="my-3 md:my-1flex flex-col w-full">
       <div className="flex justify-between">
         <h1 className="text-4xl font-bold text-[#008000]">ECO-HUB</h1>
-        <button className="text-sm font-semibold px-3 py-2 rounded-full text-white bg-[#f8b72b] hover:bg-black">
-          GARBAGE COLLECTOR
-        </button>
+        <Link to="/glogin">
+          <button className="text-sm font-semibold px-3 py-2 rounded-full text-white bg-[#f8b72b] hover:bg-black">
+            GARBAGE COLLECTOR
+          </button>
+        </Link>
       </div>
 
       <section className="hidden lg:flex justify-center gap-28 my-4 text-white text-xl font-bold">
